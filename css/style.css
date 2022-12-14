@@ -303,6 +303,7 @@
     background-color: #262626;
     border-radius: 3px 0 0 3px;
     color: #bbbbbb;
+    cursor: pointer;
     transition-duration: 0.2s;
 }
 
@@ -363,6 +364,7 @@
     transition: 0.1s;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .subH ul svg {
@@ -610,6 +612,7 @@
     justify-content: center;
     align-items: center;
     transition-duration: 0.1s;
+    cursor: pointer;
 }
 
 .vehicles .container .vehiclesNav button:hover {
@@ -669,6 +672,7 @@
     fill: #333;
     font-size: 15px;
     transition-duration: 0.1s;
+    cursor: pointer;
 }
 
 .vehicles .vehiclesLi .liMain button svg {
@@ -696,6 +700,7 @@
     border: 0;
     color: #767676;
     transition-duration: 0.2s;
+    cursor: pointer;
 }
 
 .vehicles .vehiclesLi .seeAll:hover {
