@@ -339,6 +339,14 @@
 /* End */
 
 /* Sub */
+
+/* class for the click */
+
+.liClicked {
+    border-bottom: solid 2px #008dfc !important;
+    color: white !important;
+}
+
 .subH {
     background-color: var(--main-color);
     height: 64px;

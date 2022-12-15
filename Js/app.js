@@ -610,11 +610,11 @@ const serviceM = document.querySelector('.serviceM')
 const tech = document.querySelector('.tech')
 
 onlineLi.addEventListener('click', (event)=> {
-  onlineLi.style.borderTop = '#1998fc solid 2px'
-  serLi.style.borderTop = ''
-  purLi.style.borderTop = ''
-  modelsLi.style.borderTop = ''
-  techLi.style.borderTop = ''
+  onlineLi.classList.add('liClicked')
+  serLi.classList.remove('liClicked')
+  purLi.classList.remove('liClicked')
+  modelsLi.classList.remove('liClicked')
+  techLi.classList.remove('liClicked')
   document.body.classList.add('stop-scrolling');
   online.classList.add('show');
   header.classList.add('appear');
@@ -626,11 +626,11 @@ onlineLi.addEventListener('click', (event)=> {
 
 purLi.addEventListener('click', ()=> {
   document.body.classList.add('stop-scrolling');
-  onlineLi.style.borderTop = ''
-  serLi.style.borderTop = ''
-  purLi.style.borderTop = '#1998fc solid 2px'
-  modelsLi.style.borderTop = ''
-  techLi.style.borderTop = ''
+  onlineLi.classList.remove('liClicked')
+  serLi.classList.remove('liClicked')
+  purLi.classList.add('liClicked')
+  modelsLi.classList.remove('liClicked')
+  techLi.classList.remove('liClicked')
   purchases.classList.add('show')
   header.classList.add('appear');
   model.classList.remove('show');
@@ -641,11 +641,11 @@ purLi.addEventListener('click', ()=> {
 
 serLi.addEventListener('click',()=> {
   document.body.classList.add('stop-scrolling');
-  serLi.style.borderTop = '#1998fc solid 2px'
-  onlineLi.style.borderTop = ''
-  purLi.style.borderTop = ''
-  modelsLi.style.borderTop = ''
-  techLi.style.borderTop = ''
+  serLi.classList.add('liClicked')
+  onlineLi.classList.remove('liClicked')
+  purLi.classList.remove('liClicked')
+  modelsLi.classList.remove('liClicked')
+  techLi.classList.remove('liClicked')
   serviceM.classList.add('show')
   header.classList.add('appear');
   model.classList.remove('show');
@@ -656,11 +656,11 @@ serLi.addEventListener('click',()=> {
 
 techLi.addEventListener('click',()=> {
   document.body.classList.add('stop-scrolling');
-  techLi.style.borderTop = '#1998fc solid 2px'
-  onlineLi.style.borderTop = ''
-  serLi.style.borderTop = ''
-  modelsLi.style.borderTop = ''
-  purLi.style.borderTop = ''
+  techLi.classList.add('liClicked')
+  onlineLi.classList.remove('liClicked')
+  serLi.classList.remove('liClicked')
+  modelsLi.classList.remove('liClicked')
+  purLi.classList.remove('liClicked')
   tech.classList.add('show')
   header.classList.add('appear');
   model.classList.remove('show');
@@ -673,11 +673,11 @@ techLi.addEventListener('click',()=> {
 
 modelsLi.addEventListener('click',()=> {
   document.body.classList.add('stop-scrolling');
-  modelsLi.style.borderTop = '#1998fc solid 2px'
-  onlineLi.style.borderTop = ''
-  serLi.style.borderTop = ''
-  techLi.style.borderTop = ''
-  purLi.style.borderTop = ''
+  modelsLi.classList.add('liClicked')
+  onlineLi.classList.remove('liClicked')
+  serLi.classList.remove('liClicked')
+  techLi.classList.remove('liClicked')
+  purLi.classList.remove('liClicked')
   model.classList.add('show');
   header.classList.add('appear');
   online.classList.remove('show');
@@ -722,11 +722,11 @@ for(let i = 0 ;i < mainCon.length; i++) {
 for(const pot of exit) {
   pot.addEventListener('click', ()=> {
     document.body.classList.remove('stop-scrolling');
-    modelsLi.style.borderTop = ''
-    onlineLi.style.borderTop = ''
-    serLi.style.borderTop = ''
-    techLi.style.borderTop = ''
-    purLi.style.borderTop = ''
+    modelsLi.classList.remove('liClicked')
+    onlineLi.classList.remove('liClicked')
+    serLi.classList.remove('liClicked')
+    techLi.classList.remove('liClicked')
+    purLi.classList.remove('liClicked')
     online.classList.remove('show');
     model.classList.remove('show');
     purchases.classList.remove('show');
