@@ -610,11 +610,11 @@ const serviceM = document.querySelector('.serviceM')
 const tech = document.querySelector('.tech')
 
 onlineLi.addEventListener('click', (event)=> {
-  onlineLi.style.borderBottom = '#1998fc solid 2px'
-  serLi.style.borderBottom = ''
-  purLi.style.borderBottom = ''
-  modelsLi.style.borderBottom = ''
-  techLi.style.borderBottom = ''
+  onlineLi.style.borderTop = '#1998fc solid 2px'
+  serLi.style.borderTop = ''
+  purLi.style.borderTop = ''
+  modelsLi.style.borderTop = ''
+  techLi.style.borderTop = ''
   document.body.classList.add('stop-scrolling');
   online.classList.add('show');
   header.classList.add('appear');
@@ -626,11 +626,11 @@ onlineLi.addEventListener('click', (event)=> {
 
 purLi.addEventListener('click', ()=> {
   document.body.classList.add('stop-scrolling');
-  onlineLi.style.borderBottom = ''
-  serLi.style.borderBottom = ''
-  purLi.style.borderBottom = '#1998fc solid 2px'
-  modelsLi.style.borderBottom = ''
-  techLi.style.borderBottom = ''
+  onlineLi.style.borderTop = ''
+  serLi.style.borderTop = ''
+  purLi.style.borderTop = '#1998fc solid 2px'
+  modelsLi.style.borderTop = ''
+  techLi.style.borderTop = ''
   purchases.classList.add('show')
   header.classList.add('appear');
   model.classList.remove('show');
@@ -641,11 +641,11 @@ purLi.addEventListener('click', ()=> {
 
 serLi.addEventListener('click',()=> {
   document.body.classList.add('stop-scrolling');
-  serLi.style.borderBottom = '#1998fc solid 2px'
-  onlineLi.style.borderBottom = ''
-  purLi.style.borderBottom = ''
-  modelsLi.style.borderBottom = ''
-  techLi.style.borderBottom = ''
+  serLi.style.borderTop = '#1998fc solid 2px'
+  onlineLi.style.borderTop = ''
+  purLi.style.borderTop = ''
+  modelsLi.style.borderTop = ''
+  techLi.style.borderTop = ''
   serviceM.classList.add('show')
   header.classList.add('appear');
   model.classList.remove('show');
@@ -656,11 +656,11 @@ serLi.addEventListener('click',()=> {
 
 techLi.addEventListener('click',()=> {
   document.body.classList.add('stop-scrolling');
-  techLi.style.borderBottom = '#1998fc solid 2px'
-  onlineLi.style.borderBottom = ''
-  serLi.style.borderBottom = ''
-  modelsLi.style.borderBottom = ''
-  purLi.style.borderBottom = ''
+  techLi.style.borderTop = '#1998fc solid 2px'
+  onlineLi.style.borderTop = ''
+  serLi.style.borderTop = ''
+  modelsLi.style.borderTop = ''
+  purLi.style.borderTop = ''
   tech.classList.add('show')
   header.classList.add('appear');
   model.classList.remove('show');
@@ -673,11 +673,11 @@ techLi.addEventListener('click',()=> {
 
 modelsLi.addEventListener('click',()=> {
   document.body.classList.add('stop-scrolling');
-  modelsLi.style.borderBottom = '#1998fc solid 2px'
-  onlineLi.style.borderBottom = ''
-  serLi.style.borderBottom = ''
-  techLi.style.borderBottom = ''
-  purLi.style.borderBottom = ''
+  modelsLi.style.borderTop = '#1998fc solid 2px'
+  onlineLi.style.borderTop = ''
+  serLi.style.borderTop = ''
+  techLi.style.borderTop = ''
+  purLi.style.borderTop = ''
   model.classList.add('show');
   header.classList.add('appear');
   online.classList.remove('show');
@@ -722,11 +722,11 @@ for(let i = 0 ;i < mainCon.length; i++) {
 for(const pot of exit) {
   pot.addEventListener('click', ()=> {
     document.body.classList.remove('stop-scrolling');
-    modelsLi.style.borderBottom = ''
-    onlineLi.style.borderBottom = ''
-    serLi.style.borderBottom = ''
-    techLi.style.borderBottom = ''
-    purLi.style.borderBottom = ''
+    modelsLi.style.borderTop = ''
+    onlineLi.style.borderTop = ''
+    serLi.style.borderTop = ''
+    techLi.style.borderTop = ''
+    purLi.style.borderTop = ''
     online.classList.remove('show');
     model.classList.remove('show');
     purchases.classList.remove('show');
