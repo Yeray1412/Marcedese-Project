@@ -922,5 +922,104 @@ for(const button of returnButton) {
     })
   }
 }
+// End
+
+// vehicle Nav Mobile
+
+const vehicleNavMobile = document.querySelector('.vehicleNavMobile');
+const arrowDownMobile = document.querySelector('.arrowDownMobile')
+const mobileNavMenu = document.querySelector('.mobileNavMenu');
+const ulNavMobile = document.querySelector('.ulNavMobile');
+const mainNavMobile = document.querySelector('.mainNavMobile');
+
+window.addEventListener('scroll',()=> {
+  if(idk.getBoundingClientRect().bottom <= 120) {
+    vehicleNavMobile.classList.add('vehicleMobileActivate')
+
+    for(const child of vehicleNavMobile.children) {
+      child.style.width = '100%'
+    }
+  }
+
+  else {
+    vehicleNavMobile.classList.remove('vehicleMobileActivate')
+
+    for(const child of vehicleNavMobile.children) {
+      child.style.width = '95%'
+    }
+  }
+});
+
+// for the menu
+
+arrowDownMobile.addEventListener('click',(event)=> {
+  event.preventDefault()
+  mobileNavMenu.style.top = '8px';
+})
+
+window.addEventListener('scroll',()=> {
+  if(idk.getBoundingClientRect().bottom > 600 || idk.getBoundingClientRect().bottom <= -6000) {
+    mobileNavMenu.style.top = '-400px';
+  }
+})
+
+document.addEventListener('click', (event)=>{
+  let isClicked = arrowDownMobile.contains(event.target);
+
+  if(!isClicked) {
+    mobileNavMenu.style.top = '-400px';
+  }
+})
+
+for(const Li of ulNavMobile.children) {
+  if(Li.textContent == 'All models') {
+    Li.addEventListener('click',()=>{
+      Li.classList.add('navMobileActive')
+      mainNavMobile.firstElementChild.textContent = 'All models';
+      for(const Li of ulNavMobile.children) {
+        if(Li.textContent != 'All models') {
+          Li.classList.remove('navMobileActive')
+        }
+      }
+    })
+  }
+  
+  if(Li.textContent == 'Mercedes-AMG') {
+    Li.addEventListener('click',()=>{
+      Li.classList.add('navMobileActive')
+      mainNavMobile.firstElementChild.textContent = 'Mercedes-AMG';
+      for(const Li of ulNavMobile.children) {
+        if(Li.textContent != 'Mercedes-AMG') {
+          Li.classList.remove('navMobileActive')
+        }
+      }
+    })
+  }
+
+  if(Li.textContent == 'Mercedes-Maybach') {
+    Li.addEventListener('click',()=>{
+      Li.classList.add('navMobileActive')
+      mainNavMobile.firstElementChild.textContent = 'Mercedes-Maybach';
+      for(const Li of ulNavMobile.children) {
+        if(Li.textContent != 'Mercedes-Maybach') {
+          Li.classList.remove('navMobileActive')
+        }
+      }
+    })
+  }
+
+  if(Li.textContent == 'New Models') {
+    Li.addEventListener('click',()=>{
+      Li.classList.add('navMobileActive')
+      mainNavMobile.firstElementChild.textContent = 'New Models';
+      for(const Li of ulNavMobile.children) {
+        if(Li.textContent != 'New Models') {
+          Li.classList.remove('navMobileActive')
+        }
+      }
+    })
+  }
+}
+
 
 // End
