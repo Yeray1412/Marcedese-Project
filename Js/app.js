@@ -1271,6 +1271,7 @@ for(const li of subNavUl.children) {
     for(const head of cardHead) {
       if(head.textContent == li.textContent) {
         head.scrollIntoView()
+        cardsContainer.style.width = '80vw'
       }
     }
   })

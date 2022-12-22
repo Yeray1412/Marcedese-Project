@@ -1894,7 +1894,8 @@ s
     }
 
     .vehicles .mainVehiclesCon {
-        justify-content: flex-start;
+        justify-content: center !important;
+        width: 90vw;
     }
 
     .vehicles .mainVehiclesCon .cardsContainer {
