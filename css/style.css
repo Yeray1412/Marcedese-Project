@@ -968,7 +968,7 @@
 
 .footerSec {
     background-color: #000;
-    height: 100%;
+    min-height: 100vh;
 }
 
 .footerSec .container {
@@ -1006,7 +1006,9 @@
     width: 155px;
 }
 
-.footerSec .container .footerGrid div h4 {
+.footerSec .container .footerGrid .hFour {
+    width: 200px;
+    font-size: 17px;
     font-weight: bold;
 }
 
