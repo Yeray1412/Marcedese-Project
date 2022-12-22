@@ -936,7 +936,8 @@ const mainNavMobile = document.querySelector('.mainNavMobile');
 const subNavUl = document.querySelector('.subNavUl');
 const subNavMobile = document.querySelector('.subNavMobile')
 
-window.addEventListener('scroll',()=> {
+window.addEventListener('scroll',(event)=> {
+  event.preventDefault()
   if(idk.getBoundingClientRect().bottom <= 120) {
     vehicleNavMobile.classList.add('vehicleMobileActivate')
 
@@ -946,7 +947,10 @@ window.addEventListener('scroll',()=> {
 
     for(const li of subNavUl.children) {
       if(li.textContent == 'Sedans') {
-        li.click()
+        li.classList.add('MobileNavLiActive');
+      }
+      else {
+        li.classList.remove('MobileNavLiActive');
       }
     }
   }
@@ -963,42 +967,59 @@ window.addEventListener('scroll',()=> {
     if(idk.getBoundingClientRect().bottom <= -1691) {
       for(const li of subNavUl.children) {
         if(li.textContent == 'SUV') {
-          li.click()
-        }
+          li.classList.add('MobileNavLiActive');
+      }
+      else {
+        li.classList.remove('MobileNavLiActive');
+      }
       }
     }
   
     if(idk.getBoundingClientRect().bottom <= -3773) {
       for(const li of subNavUl.children) {
         if(li.textContent == 'Hatchbacks') {
-          li.click()
-          subNavMobile.scrollLeft = 0
-        }
+          li.classList.add('MobileNavLiActive');
+      }
+      else {
+        li.classList.remove('MobileNavLiActive');
+      }
       }
     }
   
     if(idk.getBoundingClientRect().bottom <= -4200) {
       for(const li of subNavUl.children) {
         if(li.textContent == 'Coupés') {
-          li.click()
-        }
+          li.classList.add('MobileNavLiActive');
+      }
+      else {
+        li.classList.remove('MobileNavLiActive');
+      }
       }
     }
   
     if(idk.getBoundingClientRect().bottom <= -5619) {
       for(const li of subNavUl.children) {
         if(li.textContent == 'Cabriolets / Roadsters') {
-          li.click()
-          subNavMobile.scrollLeft = 1000
-        }
+          li.classList.add('MobileNavLiActive');
+      }
+      else {
+        li.classList.remove('MobileNavLiActive');
+      }
       }
     }
+
+    // if(idk.getBoundingClientRect().bottom >= -5000) {
+    //   subNavMobile.scrollLeft = 0
+    // }
   
     if(idk.getBoundingClientRect().bottom <= -6047) {
       for(const li of subNavUl.children) {
         if(li.textContent == 'Vans') {
-          li.click()
-        }
+          li.classList.add('MobileNavLiActive');
+      }
+      else {
+        li.classList.remove('MobileNavLiActive');
+      }
       }
     }
   }
@@ -1010,16 +1031,22 @@ window.addEventListener('scroll',()=> {
   
       for(const li of subNavUl.children) {
         if(li.textContent == 'SUV') {
-          li.click()
-        }
+          li.classList.add('MobileNavLiActive');
+      }
+      else {
+        li.classList.remove('MobileNavLiActive');
+      }
       }
     }
 
-    if(idk.getBoundingClientRect().bottom <= -682) {
+    if(idk.getBoundingClientRect().bottom <= -639) {
       for(const li of subNavUl.children) {
         if(li.textContent == 'Coupés') {
-          li.click()
-        }
+          li.classList.add('MobileNavLiActive');
+      }
+      else {
+        li.classList.remove('MobileNavLiActive');
+      }
       }
     }
 
@@ -1038,7 +1065,7 @@ const speContainer = document.querySelector('.speContainer')
 const sedansMain = document.querySelector('.sedansMain');
 const suvMain = document.querySelector('.suvMain')
 const coupesMain = document.querySelector('.coupesMain')
-
+const cardHead =document.querySelectorAll('.cardHead')
 
 arrowDownMobile.addEventListener('click',(event)=> {
   event.preventDefault()
@@ -1244,10 +1271,12 @@ for(const Li of ulNavMobile.children) {
 
 for(const li of subNavUl.children) {
   li.addEventListener('click',(event)=> {
-    for(const dLi of subNavUl.children) {
-      dLi.classList.remove('MobileNavLiActive');
+    event.preventDefault()
+    for(const head of cardHead) {
+      if(head.textContent == li.textContent) {
+        head.scrollIntoView()
+      }
     }
-    li.classList.add('MobileNavLiActive')
   })
 }
 
