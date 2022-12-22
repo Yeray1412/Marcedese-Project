@@ -968,7 +968,7 @@
 
 .footerSec {
     background-color: #000;
-    height: calc(100vh + 2px)
+    height: 100%;
 }
 
 .footerSec .container {
@@ -1754,6 +1754,7 @@
     height: 16px;
     fill: white;
     margin-right: 10px;
+    transition-duration: 0.3s;
 }
 
 .footerGridMobile ul {

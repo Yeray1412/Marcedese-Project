@@ -1097,9 +1097,11 @@ for(let i = 0; i<buttonDown.length; i++) {
   buttonDown[i].addEventListener('click',()=> {
     if(openingHead[i].offsetHeight == 56) {
       openingHead[i].style.height = `${HaUl[i].offsetHeight + 56}px`
+      buttonDown[i].style.transform = 'rotate(180deg)'
     }
     else {
       openingHead[i].style.height = `56px`;
+      buttonDown[i].style.transform = 'rotate(0deg)'
     }
   })
 }
