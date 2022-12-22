@@ -1656,7 +1656,6 @@
 .vehicleNavMobile .subNavMobile {
     background-color: white;
     overflow-x: scroll;
-    width: 95%;
     overflow-y: hidden;
     transition-duration: 0.5s;
 }
@@ -1666,7 +1665,7 @@
     font-family: var(--main-font);
     font-size: 15px;
     height: 66px;
-    width: 800px;
+    width: 672px;
     color: #767676;
     display: flex;
     font-size: 18px;
@@ -1678,6 +1677,9 @@
 
 .vehicleNavMobile .subNavMobile ul li {
     padding: 12px 16px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
 
 /* for the menu */
@@ -1723,7 +1725,57 @@
     padding: 18px 16px;
 }
 
+/* The footer */
 
+.height100 {
+    height: 200px !important;
+}
+
+.footerGridMobile .main {
+    border-bottom: solid 1px #333;
+    height: 56px;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    overflow: hidden;
+}
+
+.footerGridMobile .theHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 16px 0;
+    height: 56px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.footerGridMobile .theHeader svg {
+    width: 16px;
+    height: 16px;
+    fill: white;
+    margin-right: 10px;
+}
+
+.footerGridMobile ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    padding-bottom: 24px;
+}
+
+.footerGridMobile ul li {
+    font-size: 13px;
+    color: #bbbbbb;
+    padding: 0 0 16px 0;
+}
+
+.footerGridMobile ul li:last-child {
+    padding: 0;
+}
+
+.footerGridMobile ul li:first-child {
+    padding: 8px 0 16px 0;
+}
 
 /* End */
 
@@ -1795,6 +1847,34 @@
 }
 /* Mid */
 @media (max-width:992px) {
+
+    .footerSec {
+        height: 100%;
+    }
+
+     .container .subFooter .icons {
+        font-size: 25px;
+        width: 130px;
+    }
+
+    .footerSec .container .subFooter {
+        justify-content: space-between;
+        height: 190px;
+        align-items: flex-start;
+        margin-top: 40px;
+        flex-direction: column-reverse;
+    }
+
+    .footerSec .container .subFooter .text {
+        justify-content: space-between;
+        font-size: 13px;
+        width: 270px;
+        flex-wrap: wrap;
+    }
+
+    .gridSec {
+        margin-bottom: 500px;
+    }
 
     .vehicles .mainVehiclesCon .cardsContainer {
         border: 0 !important;

@@ -931,6 +931,8 @@ const arrowDownMobile = document.querySelector('.arrowDownMobile')
 const mobileNavMenu = document.querySelector('.mobileNavMenu');
 const ulNavMobile = document.querySelector('.ulNavMobile');
 const mainNavMobile = document.querySelector('.mainNavMobile');
+const subNavUl = document.querySelector('.subNavUl');
+const subNavMobile = document.querySelector('.subNavMobile')
 
 window.addEventListener('scroll',()=> {
   if(idk.getBoundingClientRect().bottom <= 120) {
@@ -938,6 +940,12 @@ window.addEventListener('scroll',()=> {
 
     for(const child of vehicleNavMobile.children) {
       child.style.width = '100%'
+    }
+
+    for(const li of subNavUl.children) {
+      if(li.textContent == 'Sedans') {
+        li.click()
+      }
     }
   }
 
@@ -948,6 +956,53 @@ window.addEventListener('scroll',()=> {
       child.style.width = '95%'
     }
   }
+
+  if(idk.getBoundingClientRect().bottom <= -1691) {
+    for(const li of subNavUl.children) {
+      if(li.textContent == 'SUV') {
+        li.click()
+      }
+    }
+  }
+
+  if(idk.getBoundingClientRect().bottom <= -3773) {
+    for(const li of subNavUl.children) {
+      if(li.textContent == 'Hatchbacks') {
+        li.click()
+        subNavMobile.scrollLeft = 0
+      }
+    }
+  }
+
+  if(idk.getBoundingClientRect().bottom <= -4200) {
+    for(const li of subNavUl.children) {
+      if(li.textContent == 'Coupés') {
+        li.click()
+      }
+    }
+  }
+
+  if(idk.getBoundingClientRect().bottom <= -5619) {
+    for(const li of subNavUl.children) {
+      if(li.textContent == 'Cabriolets / Roadsters') {
+        li.click()
+        subNavMobile.scrollLeft = 1000
+      }
+    }
+  }
+
+  if(idk.getBoundingClientRect().bottom <= -6047) {
+    for(const li of subNavUl.children) {
+      if(li.textContent == 'Vans') {
+        li.click()
+      }
+    }
+  }
+
+  if(idk.getBoundingClientRect().bottom <= -6547) {
+    vehicleNavMobile.classList.remove('vehicleMobileActivate') 
+  }
+  
 });
 
 // for the menu
@@ -1021,5 +1076,32 @@ for(const Li of ulNavMobile.children) {
   }
 }
 
+for(const li of subNavUl.children) {
+  li.addEventListener('click',(event)=> {
+    for(const dLi of subNavUl.children) {
+      dLi.classList.remove('MobileNavLiActive');
+    }
+    li.classList.add('MobileNavLiActive')
+  })
+}
+
+// End
+
+// for the footer mobile
+
+const buttonDown = document.querySelectorAll('.buttonDown')
+const openingHead = document.querySelectorAll('.openingHead')
+const HaUl = document.querySelectorAll('.HaUl')
+
+for(let i = 0; i<buttonDown.length; i++) {
+  buttonDown[i].addEventListener('click',()=> {
+    if(openingHead[i].offsetHeight == 56) {
+      openingHead[i].style.height = `${HaUl[i].offsetHeight + 56}px`
+    }
+    else {
+      openingHead[i].style.height = `56px`;
+    }
+  })
+}
 
 // End
