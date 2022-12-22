@@ -1007,10 +1007,6 @@ window.addEventListener('scroll',(event)=> {
       }
       }
     }
-
-    // if(idk.getBoundingClientRect().bottom >= -5000) {
-    //   subNavMobile.scrollLeft = 0
-    // }
   
     if(idk.getBoundingClientRect().bottom <= -6047) {
       for(const li of subNavUl.children) {
