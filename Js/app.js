@@ -833,8 +833,9 @@ const popCardMobile = document.querySelectorAll('.popCardMobile')
 const returnButton = document.querySelectorAll('.return');
 // For the main button
 navToggle.addEventListener('click',()=> {
+  window.scrollTo({top: 0, behavior: 'smooth'});
   document.body.classList.add('stopScrolling');
-  mainPopUpMenu.classList.add('popUpShowOnMobile')
+  mainPopUpMenu.classList.add('popUpShowOnMobile');
 })
 
 for(const mobileNavLi of mobileNavUl.children) {
@@ -872,6 +873,7 @@ for(const mobileNavLi of mobileNavUl.children) {
 // For the car button
 
 navCarToggle.addEventListener('click', ()=> {
+  window.scrollTo({top: 0, behavior: 'smooth'});
   document.body.classList.add('stopScrolling');
   mainPopUpMenu.classList.add('popUpShowOnMobile');
   OurModelPopUpMenu.classList.add('popUpShowOnMobile');
@@ -957,55 +959,86 @@ window.addEventListener('scroll',()=> {
     }
   }
 
-  if(idk.getBoundingClientRect().bottom <= -1691) {
-    for(const li of subNavUl.children) {
-      if(li.textContent == 'SUV') {
-        li.click()
+  if(mainNavMobile.firstElementChild.textContent == 'All Models') {
+    if(idk.getBoundingClientRect().bottom <= -1691) {
+      for(const li of subNavUl.children) {
+        if(li.textContent == 'SUV') {
+          li.click()
+        }
+      }
+    }
+  
+    if(idk.getBoundingClientRect().bottom <= -3773) {
+      for(const li of subNavUl.children) {
+        if(li.textContent == 'Hatchbacks') {
+          li.click()
+          subNavMobile.scrollLeft = 0
+        }
+      }
+    }
+  
+    if(idk.getBoundingClientRect().bottom <= -4200) {
+      for(const li of subNavUl.children) {
+        if(li.textContent == 'Coupés') {
+          li.click()
+        }
+      }
+    }
+  
+    if(idk.getBoundingClientRect().bottom <= -5619) {
+      for(const li of subNavUl.children) {
+        if(li.textContent == 'Cabriolets / Roadsters') {
+          li.click()
+          subNavMobile.scrollLeft = 1000
+        }
+      }
+    }
+  
+    if(idk.getBoundingClientRect().bottom <= -6047) {
+      for(const li of subNavUl.children) {
+        if(li.textContent == 'Vans') {
+          li.click()
+        }
       }
     }
   }
 
-  if(idk.getBoundingClientRect().bottom <= -3773) {
-    for(const li of subNavUl.children) {
-      if(li.textContent == 'Hatchbacks') {
-        li.click()
-        subNavMobile.scrollLeft = 0
+  if(mainNavMobile.firstElementChild.textContent == 'Mercedes-AMG') {
+
+    if(idk.getBoundingClientRect().bottom <= 120) {
+      vehicleNavMobile.classList.add('vehicleMobileActivate')
+  
+      for(const li of subNavUl.children) {
+        if(li.textContent == 'SUV') {
+          li.click()
+        }
       }
     }
-  }
 
-  if(idk.getBoundingClientRect().bottom <= -4200) {
-    for(const li of subNavUl.children) {
-      if(li.textContent == 'Coupés') {
-        li.click()
+    if(idk.getBoundingClientRect().bottom <= -682) {
+      for(const li of subNavUl.children) {
+        if(li.textContent == 'Coupés') {
+          li.click()
+        }
       }
     }
+
   }
 
-  if(idk.getBoundingClientRect().bottom <= -5619) {
-    for(const li of subNavUl.children) {
-      if(li.textContent == 'Cabriolets / Roadsters') {
-        li.click()
-        subNavMobile.scrollLeft = 1000
-      }
-    }
-  }
-
-  if(idk.getBoundingClientRect().bottom <= -6047) {
-    for(const li of subNavUl.children) {
-      if(li.textContent == 'Vans') {
-        li.click()
-      }
-    }
-  }
-
-  if(idk.getBoundingClientRect().bottom <= -6547) {
+  if(idk.getBoundingClientRect().bottom <= -main.offsetHeight) {
     vehicleNavMobile.classList.remove('vehicleMobileActivate') 
   }
   
 });
 
 // for the menu
+
+const cardsContainer = document.querySelector('.cardsContainer');
+const speContainer = document.querySelector('.speContainer')
+const sedansMain = document.querySelector('.sedansMain');
+const suvMain = document.querySelector('.suvMain')
+const coupesMain = document.querySelector('.coupesMain')
+
 
 arrowDownMobile.addEventListener('click',(event)=> {
   event.preventDefault()
@@ -1030,7 +1063,33 @@ for(const Li of ulNavMobile.children) {
   if(Li.textContent == 'All models') {
     Li.addEventListener('click',()=>{
       Li.classList.add('navMobileActive')
-      mainNavMobile.firstElementChild.textContent = 'All models';
+      mainNavMobile.firstElementChild.textContent = 'All Models';
+      sedanHead.style.display = 'block'
+      for(const UlLi of subNavUl.children) {
+        UlLi.style.display = 'flex'
+        subNavUl.style.width = '680px'
+        UlLi.style.width ='' 
+      }
+      cardsContainer.style.height = '';
+      speContainer.style.transform = ""
+      for(const card of sedansMain.children) {
+        for(const sub of card.children) {
+            sub.style.display = 'block'
+    }
+  }
+    for(const card of suvMain.children) {
+        for(const sub of card.children) {
+            sub.style.display = 'block';
+      }
+    }
+    for(const card of coupesMain.children) {
+      for(const sub of card.children) {
+          sub.style.display = 'block';
+    }
+  }
+  for(const body of speContainer.children) {
+      body.style.display = 'block'
+  }
       for(const Li of ulNavMobile.children) {
         if(Li.textContent != 'All models') {
           Li.classList.remove('navMobileActive')
@@ -1038,11 +1097,58 @@ for(const Li of ulNavMobile.children) {
       }
     })
   }
-  
+
   if(Li.textContent == 'Mercedes-AMG') {
     Li.addEventListener('click',()=>{
       Li.classList.add('navMobileActive')
       mainNavMobile.firstElementChild.textContent = 'Mercedes-AMG';
+      sedanHead.style.display = 'block'
+      for(const UlLi of subNavUl.children) {
+        if(UlLi.textContent != 'SUV' && UlLi.textContent != 'Coupés') {
+          UlLi.style.display = 'none'
+        }
+        else {
+          UlLi.style.display = 'flex'
+          UlLi.style.width = '50%'
+          if(UlLi.textContent == 'SUV') {
+            UlLi.click()
+          }
+          subNavUl.style.width = '100%'
+        } 
+      }
+      cardsContainer.style.height = '1400px';
+      speContainer.style.transform = "translateY(0px)"
+      for(const card of suvMain.children) {
+        if(card.classList[0] == 'cardBody') {
+          for(const sub of card.children) {
+            if(sub.classList[1] != 'amg') {
+              sub.style.display = 'none';
+            }
+            else {
+              sub.style.display = 'block';
+            }
+          }
+        }
+      }
+  
+      for(const card of coupesMain.children) {
+        if(card.classList[0] == 'cardBody') {
+          for(const sub of card.children) {
+            if(sub.classList[1] != 'amg') {
+              sub.style.display = 'none';
+            }
+            else {
+              sub.style.display = 'block';
+            }
+          }
+        }
+      }
+  
+      for(const body of speContainer.children) {
+        if(body.classList[1] != 'amg') {
+          body.style.display = 'none'
+        }
+      }
       for(const Li of ulNavMobile.children) {
         if(Li.textContent != 'Mercedes-AMG') {
           Li.classList.remove('navMobileActive')
@@ -1055,6 +1161,36 @@ for(const Li of ulNavMobile.children) {
     Li.addEventListener('click',()=>{
       Li.classList.add('navMobileActive')
       mainNavMobile.firstElementChild.textContent = 'Mercedes-Maybach';
+      sedanHead.style.display = 'none'
+      for(const UlLi of subNavUl.children) {
+        if(UlLi.textContent != 'Sedans') {
+          UlLi.style.display = 'none'
+        }
+
+        else {
+          UlLi.style.display = 'flex';
+          UlLi.style.width = '100%'
+          subNavUl.style.width = '100%'
+        }
+      }
+    cardsContainer.style.height = '350px';
+    for(const card of sedansMain.children) {
+      if(card.classList == 'cardBody') {
+        for(const sub of card.children) {
+          if(sub.classList[2] != 'mayBach') {
+            sub.style.display = 'none'
+          }
+          else {
+            sub.style.display = 'block'
+          }
+        }
+      }
+    }
+    for(const body of speContainer.children) {
+      if(body.classList[1] != 'amg') {
+        body.style.display = 'block'
+      }
+    }
       for(const Li of ulNavMobile.children) {
         if(Li.textContent != 'Mercedes-Maybach') {
           Li.classList.remove('navMobileActive')
@@ -1067,6 +1203,36 @@ for(const Li of ulNavMobile.children) {
     Li.addEventListener('click',()=>{
       Li.classList.add('navMobileActive')
       mainNavMobile.firstElementChild.textContent = 'New Models';
+      cardsContainer.style.height = '750px';
+      sedanHead.style.display = 'none'
+      for(const UlLi of subNavUl.children) {
+        if(UlLi.textContent != 'Sedans') {
+          UlLi.style.display = 'none'
+        }
+
+        else {
+          UlLi.style.display = 'flex';
+          UlLi.style.width = '100%'
+          subNavUl.style.width = '100%'
+        }
+      }
+    for(const card of sedansMain.children) {
+      if(card.classList == 'cardBody') {
+        for(const sub of card.children) {
+          if(sub.classList[1] != 'new') {
+            sub.style.display = 'none'
+          }
+          else {
+            sub.style.display = 'block'
+          }
+        }
+      }
+    }
+    for(const body of speContainer.children) {
+      if(body.classList[1] != 'amg') {
+        body.style.display = 'block'
+      }
+    }
       for(const Li of ulNavMobile.children) {
         if(Li.textContent != 'New Models') {
           Li.classList.remove('navMobileActive')
@@ -1097,9 +1263,11 @@ for(let i = 0; i<buttonDown.length; i++) {
   buttonDown[i].addEventListener('click',()=> {
     if(openingHead[i].offsetHeight == 56) {
       openingHead[i].style.height = `${HaUl[i].offsetHeight + 56}px`
+      HaUl[i].style.opacity = '1';
       buttonDown[i].style.transform = 'rotate(180deg)'
     }
     else {
+      HaUl[i].style.opacity = '0';
       openingHead[i].style.height = `56px`;
       buttonDown[i].style.transform = 'rotate(0deg)'
     }
